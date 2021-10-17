@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putcharf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
+/*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 21:25:18 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/16 21:25:18 by cmarouf          ###   ########.fr       */
+/*   Created: 2021/10/17 03:17:36 by cmarouf           #+#    #+#             */
+/*   Updated: 2021/10/17 03:17:50 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int ft_putcharf(va_list argf)
+int	ft_putcharf(va_list argf)
 {
-    char    c;
+	char	c;
 
-    c = va_arg(argf, int);
-    write(1, &c, 1);
-    return (1);
+	c = va_arg(argf, int);
+	write(1, &c, 1);
+	return (1);
 }

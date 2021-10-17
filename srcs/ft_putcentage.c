@@ -6,13 +6,13 @@
 /*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 01:20:26 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 01:20:26 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 03:17:03 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int ft_putcentage(char c)
+int	ft_putcentage(char c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }
