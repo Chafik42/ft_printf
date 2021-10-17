@@ -6,7 +6,7 @@
 /*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:12:30 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 02:06:36 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 02:48:27 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+
+int ft_printf(char const *str, ...);
 
 int ft_putaddress(va_list argf, int k);
 int ft_putcentage(char c);
