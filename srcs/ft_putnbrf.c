@@ -6,12 +6,12 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:21:24 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:22:35 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 03:47:17 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	ft_putnbr(long nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
@@ -30,9 +30,9 @@ void	ft_putnbr(long nb)
 
 int	ft_putnbrf(va_list argf)
 {
-	long	nb;
+	int	nb;
 
-	nb = va_arg(argf, long);
+	nb = va_arg(argf, int);
 	ft_putnbr(nb);
 	return (ft_get_declen(argf));
 }
