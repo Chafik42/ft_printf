@@ -6,7 +6,7 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:29:10 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 16:49:07 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 23:23:17 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,24 @@ int	ft_determine_convertion(char const *str, va_list argf, int index)
 	len = 0;
 	if (str[index] == 'c')
 		len += ft_putcharf(argf);
-	if (str[index] == 's')
+	else if (str[index] == 's')
 		len += ft_putstrf(argf);
-	if (str[index] == 'p')
+	else if (str[index] == 'p')
 		len += ft_putaddress(argf, 1, "0123456789abcdef");
-	if (str[index] == 'd')
+	else if (str[index] == 'd')
 		len += ft_putnbrf(argf);
-	if (str[index] == 'i')
+	else if (str[index] == 'i')
 		len += ft_putnbrf(argf);
-	if (str[index] == 'u')
+	else if (str[index] == 'u')
 		len += ft_putunbr(argf);
-	if (str[index] == 'x')
+	else if (str[index] == 'x')
 		len += ft_putnbr_base16(argf, "0123456789abcdef");
-	if (str[index] == 'X')
+	else if (str[index] == 'X')
 		len += ft_putnbr_base16(argf, "0123456789ABCDEF");
-	if (str[index] == '%')
+	else if (str[index] == '%')
 		len += ft_putcentage('%');
+	else
+		len += write(1, "%", 1);
 	return (len);
 }
 
@@ -45,21 +47,17 @@ int	ft_printf(const char *str, ...)
 	int		len;
 
 	va_start(argf, str);
-	i = 0;
+	i = -1;
 	len = 0;
-	while (str[i])
+	while (str[++i])
 	{
-		if (str[i] == '%')
+		if (str[i] == '%' && str[i + 1])
 		{
 			len += ft_determine_convertion(str, argf, i + 1);
 			i++;
 		}
 		else
-		{
-			write(1, &str[i], 1);
-			len++;
-		}
-		i++;
+			len += write(1, &str[i], 1);
 	}
 	va_end(argf);
 	return (len);

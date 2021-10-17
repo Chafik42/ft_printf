@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_udeclen.c                                   :+:      :+:    :+:   */
+/*   ft_get_adresslen.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 15:05:25 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 18:28:24 by cmarouf          ###   ########.fr       */
+/*   Created: 2021/10/17 19:16:07 by cmarouf           #+#    #+#             */
+/*   Updated: 2021/10/17 23:24:35 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_get_udeclen(unsigned int nb)
+int	ft_get_adresslen(long unsigned int nb)
 {
 	int	len;
 
-	len = 0;
+	len = 2;
 	if (nb == 0)
-		return (1);
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	while (nb > 0)
 	{
-		nb = nb / 10;
+		nb = nb / 16;
 		len++;
 	}
 	return (len);

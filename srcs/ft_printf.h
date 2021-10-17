@@ -6,7 +6,7 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:30:51 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 16:49:26 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 19:23:13 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_putnbrf(va_list argf);
 int		ft_get_declen(int nb);
 int		ft_get_hexlen(unsigned int nb);
 int		ft_get_udeclen(unsigned int nb);
+int		ft_get_adresslen(long unsigned int nb);
 int		ft_putstrf(va_list argf);
 int		ft_putcharf(va_list argf);
 

@@ -6,7 +6,7 @@
 /*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 01:02:23 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 14:55:34 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 18:25:17 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -18,6 +18,8 @@ int	ft_get_declen(int nb)
 
 	len = 0;
 	n = nb;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		n = -n;
