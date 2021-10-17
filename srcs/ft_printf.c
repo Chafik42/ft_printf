@@ -6,7 +6,7 @@
 /*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:04:41 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 02:19:47 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 03:03:03 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ int ft_printf(const char *str, ...)
     while (str[i])
     {
         if (str[i] == '%')
+        {
             len += ft_determine_convertion(str, argf, i + 1);
+            i++;
+        }
         else
         {
             write(1, &str[i], 1);
@@ -59,5 +62,5 @@ int ft_printf(const char *str, ...)
         i++;
     }
     va_end(argf);
-    return (0);
+    return (len);
 }
