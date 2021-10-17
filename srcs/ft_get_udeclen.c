@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_get_udeclen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
+/*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 18:10:12 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 15:26:55 by cmarouf          ###   ########.fr       */
+/*   Created: 2021/10/17 15:05:25 by cmarouf           #+#    #+#             */
+/*   Updated: 2021/10/17 16:50:57 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include "ft_printf.h"
-int main(void)
+
+int	ft_get_udeclen(unsigned int nb)
 {
-	int		len1;
-	int		len2;
+	int	len;
 
-	int	i;
-	int *ptr;
-
-	i = 5;
-	ptr = &i;
-    len1 = ft_printf("%p\n", ptr);
-	len2 = printf("%p\n", ptr);
-	printf(" my printf %d OS printf %d\n", len1, len2);
+	len = 0;
+	while (nb > 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
 }

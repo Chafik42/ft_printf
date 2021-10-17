@@ -6,12 +6,13 @@
 #    By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/17 03:30:24 by cmarouf           #+#    #+#              #
-#    Updated: 2021/10/17 14:40:29 by cmarouf          ###   ########.fr        #
+#    Updated: 2021/10/17 15:07:00 by cmarouf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS 		= srcs/ft_get_declen.c 	\
 			  srcs/ft_get_hexlen.c	\
+			  srcs/ft_get_udeclen.c \
 			  srcs/ft_printf.c		\
 			  srcs/ft_putaddr.c		\
 			  srcs/ft_putcentage.c	\

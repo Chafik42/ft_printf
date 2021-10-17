@@ -6,12 +6,12 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:20:43 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:21:05 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 16:48:41 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	ft_putaddr(long unsigned int n, int k)
+void	ft_putaddr(long unsigned int n, int k, char *base)
 {
 	if (k == 1)
 	{
@@ -20,15 +20,15 @@ void	ft_putaddr(long unsigned int n, int k)
 		k--;
 	}
 	if (n >= 16)
-		ft_putaddr(n / 16, k);
-	ft_putchar(n % 16);
+		ft_putaddr(n / 16, k, base);
+	ft_putchar(base[n % 16]);
 }
 
-int	ft_putaddress(va_list argf, int k)
+int	ft_putaddress(va_list argf, int k, char *base)
 {
-	long unsigned int	n;
+	long long int	n;
 
 	n = va_arg(argf, long unsigned int);
-	ft_putaddr(n, k);
+	ft_putaddr(n, k, base);
 	return (14);
 }

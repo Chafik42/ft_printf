@@ -6,17 +6,15 @@
 /*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 01:17:02 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:08:45 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 15:09:26 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_get_hexlen(va_list argf)
+int	ft_get_hexlen(long nb)
 {
 	int	len;
-	int	nb;
 
-	nb = va_arg(argf, int);
 	len = 0;
 	if (nb < 0)
 	{

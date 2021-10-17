@@ -6,7 +6,7 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:29:10 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:29:55 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 16:49:07 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_determine_convertion(char const *str, va_list argf, int index)
 	if (str[index] == 's')
 		len += ft_putstrf(argf);
 	if (str[index] == 'p')
-		len += ft_putaddress(argf, 1);
+		len += ft_putaddress(argf, 1, "0123456789abcdef");
 	if (str[index] == 'd')
 		len += ft_putnbrf(argf);
 	if (str[index] == 'i')

@@ -6,7 +6,7 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:23:13 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:23:18 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 15:06:33 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -24,5 +24,5 @@ int	ft_putunbr(va_list argf)
 
 	nb = va_arg(argf, unsigned int);
 	ft_put_unsigned_nbr(nb);
-	return (ft_get_declen(argf));
+	return (ft_get_udeclen(nb));
 }

@@ -6,7 +6,7 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:21:24 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:47:17 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 14:52:28 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -34,5 +34,5 @@ int	ft_putnbrf(va_list argf)
 
 	nb = va_arg(argf, int);
 	ft_putnbr(nb);
-	return (ft_get_declen(argf));
+	return (ft_get_declen(nb));
 }

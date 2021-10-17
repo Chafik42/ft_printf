@@ -6,26 +6,26 @@
 /*   By: cmarouf <qatar75020@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 01:02:23 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:08:20 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/17 14:55:34 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_get_declen(va_list argf)
+int	ft_get_declen(int nb)
 {
-	int	len;
-	int	nb;
+	long	n;
+	int		len;
 
-	nb = va_arg(argf, int);
 	len = 0;
-	if (nb < 0)
+	n = nb;
+	if (n < 0)
 	{
-		nb = -nb;
+		n = -n;
 		len++;
 	}
-	while (nb > 0)
+	while (n > 0)
 	{
-		nb = nb / 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
