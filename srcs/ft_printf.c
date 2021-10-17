@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 03:20:25 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/17 03:20:28 by cmarouf          ###   ########.fr       */
+/*   Created: 2021/10/17 03:29:10 by cmarouf           #+#    #+#             */
+/*   Updated: 2021/10/17 03:29:55 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_determine_convertion(char const *str, va_list argf, int index)
