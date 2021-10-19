@@ -6,16 +6,13 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:29:10 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/18 22:59:25 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/20 01:19:26 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_determine_convertion(char const *str, va_list argf, int index)
+int	ft_determine_convertion(char const *str, va_list argf, int index, int len)
 {
-	int	len;
-
-	len = 0;
 	if (str[index] == 'c')
 		len += ft_putcharf(argf);
 	else if (str[index] == 's')
@@ -34,8 +31,10 @@ int	ft_determine_convertion(char const *str, va_list argf, int index)
 		len += ft_putnbr_base16(argf, "0123456789ABCDEF");
 	else if (str[index] == '%')
 		len += ft_putcentage('%');
-	else
+	else if (str[index + 1])
 		len += write(1, &str[index - 1], 1);
+	else if (!str[index + 1])
+		return (-1);
 	return (len);
 }
 
@@ -44,6 +43,7 @@ int	ft_printf(const char *str, ...)
 	va_list	argf;
 	int		i;
 	int		len;
+	int		error;
 
 	va_start(argf, str);
 	i = -1;
@@ -52,16 +52,17 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%' && str[i + 1])
 		{
-			len += ft_determine_convertion(str, argf, i + 1);
+			error = ft_determine_convertion(str, argf, i + 1, 0);
+			len += error;
 			i++;
 		}
+		else if (str[i] == '%')
+			error = -1;
 		else
-		{
-			if (str[i] == '%')
-				return (-1);
 			len += write(1, &str[i], 1);
-		}
 	}
 	va_end(argf);
+	if (error == -1)
+		return (-1);
 	return (len);
 }
