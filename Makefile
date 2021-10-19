@@ -6,7 +6,7 @@
 #    By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/17 03:30:24 by cmarouf           #+#    #+#              #
-#    Updated: 2021/10/18 23:12:09 by cmarouf          ###   ########.fr        #
+#    Updated: 2021/10/20 01:43:15 by cmarouf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRCS 		= srcs/ft_get_declen.c 	\
 			  srcs/ft_get_adresslen.c\
 			  srcs/ft_printf.c		\
 			  srcs/ft_putaddr.c		\
-			  srcs/ft_putcentage.c	\
 			  srcs/ft_putchar.c		\
 			  srcs/ft_putcharf.c	\
 			  srcs/ft_putnbr_base.c	\

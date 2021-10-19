@@ -6,7 +6,7 @@
 /*   By: cmarouf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 03:29:10 by cmarouf           #+#    #+#             */
-/*   Updated: 2021/10/20 01:19:26 by cmarouf          ###   ########.fr       */
+/*   Updated: 2021/10/20 01:43:35 by cmarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -30,9 +30,9 @@ int	ft_determine_convertion(char const *str, va_list argf, int index, int len)
 	else if (str[index] == 'X')
 		len += ft_putnbr_base16(argf, "0123456789ABCDEF");
 	else if (str[index] == '%')
-		len += ft_putcentage('%');
+		len += ft_putchar('%');
 	else if (str[index + 1])
-		len += write(1, &str[index - 1], 1);
+		len += ft_putchar(str[index - 1]);
 	else if (!str[index + 1])
 		return (-1);
 	return (len);
